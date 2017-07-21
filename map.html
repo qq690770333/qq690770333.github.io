@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>世界地图</title>
+    <style>
+        .headline {
+            z-index: -1 position:absolute;
+            text-align: center;
+            font-family: Georgia;
+            font-style: italic;
+            color: black;
+        }
+
+        .my_img {
+            width: 300px;
+            height: 220px;
+            position: absolute;
+            left: 43%;
+            top: 45%;
+            z-index: 3;
+            float: left;
+        }
+
+        .europe {
+            position: absolute;
+            z-index: 1;
+            left: 3%;
+            top: 20%;
+        }
+    </style>
+</head>
+
+<body>
+     <div class="headline">
+        <p>There are places I've been to, <br>but there are more to be explored...</p>
+        <img id="map" src="C:\Users\think\Documents\github\World Map.jpg" width="100%">
+    </div>
+    
+    <div class="europe">
+        <img src="./europe.jpg" width="400px" height="400px">
+    </div>
+
+     <div class="my_img">
+        <img src="./tubiao3.png" width="20" height="20">
+        <img id="img1" src="./Philippines_beachro.jpg" width="60" height="60" onmouseover="bigger('img1')" onmouseout="smaller('img1')">
+    </div>
+
+    <div class="my_img" style="left:8%; top:65%">
+        <img src="./tubiao3.png" width="20" height="20">
+        <img id="img2" src="./Spain_VW.jpg" width="60" height="60" onmouseover="bigger('img2')" onmouseout="smaller('img2')">
+    </div> 
+
+    <div class="my_img" style="left:45%; top:60%; z-index: 10;" >
+        <img src="./tubiao3.png" width="20" height="20">
+        <img id="img4" src="./Australia.jpg" width="60" height="60" onmouseover="bigger('img4')" onmouseout="smaller('img4')" >
+    </div> 
+
+    <div class="my_img" style="left:20%; top:58%">
+        <img src="./tubiao3.png" width="20" height="20">
+        <img id="img5" src="./croatia.jpg" width="60" height="60" onmouseover="bigger('img5')" onmouseout="smaller('img5')">
+    </div>
+    <div class="my_img" style="left:11%; top:52%">
+        <img src="./tubiao3.png" width="20" height="20">
+        <img id="img6" src="./paris.jpg" width="60" height="60" onmouseover="bigger('img6')" onmouseout="smaller('img6')">
+    </div>
+    <div class="my_img" style="left:24%; top:69%">
+        <img src="./tubiao3.png" width="20" height="20">
+        <img id="img7" src="./Greece.jpg" width="60" height="60" onmouseover="bigger('img7')" onmouseout="smaller('img7')">
+    </div>
+     <div class="my_img" style="left:16%; top:42%">
+        <img src="./tubiao3.png" width="20" height="20">
+        <img id="img8" src="./copenhagen.jpg" width="60" height="60" onmouseover="bigger('img8')" onmouseout="smaller('img8')">
+    </div>
+    <div class="my_img" style="left:19%; top:52%">
+        <img src="./tubiao3.png" width="20" height="20">
+        <img id="img9" src="./vienna.jpg" width="50" height="70" onmouseover="bigger('img9')" onmouseout="smaller('img9')">
+    </div>
+    <div class="my_img" style="left:23%; top:39%">
+        <img src="./tubiao3.png" width="20" height="20">
+        <img id="img10" src="./litauen.jpg" width="50" height="70" onmouseover="bigger('img10')" onmouseout="smaller('img10')">
+    </div>
+    <div class="my_img" style="left:17%; top:50%">
+        <img src="./tubiao3.png" width="20" height="20">
+        <img id="img11" src="./Germany.jpg" width="60" height="60" onmouseover="bigger('img11')" onmouseout="smaller('img11')">
+    </div>
+    <div class="my_img" style="left:38%; top:50%">
+        <img src="./tubiao3.png" width="20" height="20">
+        <img id="img12" src="./singapore.jpg" width="60" height="60" onmouseover="bigger('img12')" onmouseout="smaller('img12')">
+    </div>  
+
+
+
+
+
+
+</body>
+
+</html>
+<script>
+    function initMapMM() {
+        // 获取窗口宽度
+        if (window.innerWidth)
+            winWidth = window.innerWidth;
+        else if ((document.body) && (document.body.clientWidth))
+            winWidth = document.body.clientWidth;
+        // 获取窗口高度
+        if (window.innerHeight)
+            winHeight = window.innerHeight;
+        else if ((document.body) && (document.body.clientHeight))
+            winHeight = document.body.clientHeight;
+        // 通过深入 Document 内部对 body 进行检测，获取窗口大小
+        if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+            winHeight = document.documentElement.clientHeight;
+            winWidth = document.documentElement.clientWidth;
+        }
+
+        var map = document.getElementById("map");
+        map.width = winWidth;
+        map.height = winHeight;
+    }
+
+
+    window.onresize = function () {
+        initMapMM();
+    }
+
+    function bigger(id) {
+        var img = document.getElementById(id);
+        img.style.width = '400px';
+        img.style.height = '400px';    
+    }
+
+    function smaller(id) {
+        var img = document.getElementById(id);
+        img.style.width = '60px';
+        img.style.height = '60px';
+    }
+
+</script>
